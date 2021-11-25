@@ -138,7 +138,7 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 			let output = ''
 
 			for( let user of users ) {
-				output += `<li>${user.static_fire_date_utc}</li>`
+				output += `<li>${user.date_utc}</li>`
 			}
 
 			document.getElementById('lista').innerHTML = output
@@ -240,36 +240,36 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 
 
 		function show1(users) {
-			console.log(users[0].static_fire_date_utc)
+			console.log(users[0].date_utc)
 			let output = ''
 
-			output += `<li>${users[users.length-1].static_fire_date_utc}</li>`
+			output += `<li>${users[users.length-1].date_utc}</li>`
 
 			document.getElementById('nextLaunch').innerHTML = output
 		}
 		function show2(users) {
-			console.log(users[0].static_fire_date_utc)
+			console.log(users[0].date_utc)
 			let output = ''
 
-			output += `<li>${users[users.length-2].static_fire_date_utc}</li>`
+			output += `<li>${users[users.length-2].date_utc}</li>`
 
 			document.getElementById('lastLaunch').innerHTML = output
 		}
 		function show3(users) {
-			console.log(users[0].static_fire_date_utc)
+			console.log(users[0].date_utc)
 			let output = ''
 
 			for (let i = 1; i < 10; i++){
-				output += `<li>${users[users.length-i].static_fire_date_utc}</li>`
+				output += `<li>${users[users.length-i].date_utc}</li>`
 			}
 			document.getElementById('nextLaunches').innerHTML = output
 		}
 		function show4(users) {
-			console.log(users[0].static_fire_date_utc)
+			console.log(users[0].date_utc)
 			let output = ''
 
 			for (let i = 1; i < 10; i++){
-				output += `<li>${users[users.length-i].static_fire_date_utc}</li>`
+				output += `<li>${users[users.length-i].date_utc}</li>`
 			}
 			document.getElementById('lastLaunches').innerHTML = output
 		}
@@ -278,7 +278,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 			let output = ''
 
 			for( let user of users ) {
-				output += `<li>${user.static_fire_date_utc}</li>`
+				output += `<li>${user.date_utc}</li>`
 			}
 
 			//document.getElementById('lista').innerHTML = output
@@ -288,7 +288,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 </body>
 </html>
 ```
-Perceba que a API possui muitos campos como null, pois em alguns dos vôos ela retorna a data como ***date_utc*** e em outros como ***static_fire_date_utc***
+<img src="spacex_final.png">
 
 
 
