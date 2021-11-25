@@ -5,8 +5,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SpaceX Launches</title>
+	<style>
+		body {
+			text-align: center;
+			background-color: #efefef;
+		}
+		ul {
+			list-style-type: none;
+		}
+	</style>
 </head>
 <body>
+	<img src="SpaceX-Logo.png" alt="Logo SpaceX" width="300px">
 	<ul id="lista">
 
 	</ul>
@@ -15,9 +25,8 @@
 			try {
 				const response = await fetch('http://localhost:4567/')
 				const data = await response.json()
-				console.log()
-				//show(data)
 				show(data)
+				console.log(data.length)
 			} catch (error) {
 				console.log(error)
 			}
@@ -28,7 +37,7 @@
 			let output = ''
 
 			for( let user of users ) {
-				output += `<li>${user.name}</li>`
+				output += `<li>${user.static_fire_date_utc}</li>`
 			}
 
 			document.getElementById('lista').innerHTML = output
