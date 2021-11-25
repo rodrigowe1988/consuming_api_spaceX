@@ -179,3 +179,4 @@ Ao executar o código acima (node server.js), podemos ver que na porta localhost
 
 <img src="spacex.png">
 
+Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa para a nossa aplicação.
