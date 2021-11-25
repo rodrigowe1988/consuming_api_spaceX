@@ -1,6 +1,3 @@
-<img src="imagem_inicial_app.png" width="500px">
-Tela inicial da Aplicação
-
 ## Consumir API
 
 ### API
