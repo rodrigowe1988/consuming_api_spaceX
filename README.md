@@ -288,7 +288,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 </body>
 </html>
 ```
-Perceba que a API possui muitos campos como null.
+Perceba que a API possui muitos campos como null, pois em alguns dos vôos ela retorna a data como ***date_utc*** e em outros como ***static_fire_date_utc***
 
 
 
