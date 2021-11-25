@@ -137,3 +137,30 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 </body>
 </html>
 ```
+
+### Backend
+Pegando a URL com os dados de lançamentos: 
+* https://api.spacexdata.com/v3/launches
+
+AXIOS
+Muito parecido com a ideia do fetch, utilizaremos o axios para receber o json da API de lançamentos.
+
+```
+const cors = require('cors')
+const express = require('express')
+const app = express()
+const axios = require('axios')
+
+app.use(cors())
+
+app.get('/', async(req, res) => {
+
+	//do response (res) podemos extrair diretamente o data
+	const { data } = await axios('https://api.spacexdata.com/v5/launches')
+
+	return res.json(data)
+})
+
+app.listen('4567')
+```
+Ao executar o código acima (node server.js), podemos ver que na porta localhost:4567 temos nossa API rodando perfeitamente.
