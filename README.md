@@ -180,3 +180,115 @@ Ao executar o código acima (node server.js), podemos ver que na porta localhost
 <img src="spacex.png">
 
 Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa para a nossa aplicação.
+
+```jsx
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SpaceX Launches</title>
+	<style>
+		body {
+			text-align: center;
+			background-color: #efefef;
+			align-items: center;
+		}
+		.datas {
+			text-align: left;
+			padding-left: 50px;
+		}
+		ul {
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+	<img src="SpaceX-Logo.png" alt="Logo SpaceX" width="300px">
+
+	<div class="datas">
+	<h3>Próximo Lançamento: </h3>
+	<ul id="nextLaunch"></ul>
+	<h3>Último Lançamento:</h3>
+	<ul id="lastLaunch"></ul>
+	<h3>Próximos Lançamentos:</h3>
+	<ul id="nextLaunches"></ul>
+	<h3>Últimos Lançamentos: </h3>
+	<ul id="lastLaunches"></ul>
+
+	<ul id="lista">
+	</ul>
+	</div>
+	<script>
+		async function getContent(){
+			try {
+				const response = await fetch('http://localhost:4567/')
+				const data = await response.json()
+				//show(data)
+				console.log(data[0])
+				console.log(data.length)
+				show1(data)
+				show2(data)
+				show3(data)
+				show4(data)
+			} catch (error) {
+				console.log(error)
+			}
+		}
+		getContent()
+
+
+		function show1(users) {
+			console.log(users[0].static_fire_date_utc)
+			let output = ''
+
+			output += `<li>${users[users.length-1].static_fire_date_utc}</li>`
+
+			document.getElementById('nextLaunch').innerHTML = output
+		}
+		function show2(users) {
+			console.log(users[0].static_fire_date_utc)
+			let output = ''
+
+			output += `<li>${users[users.length-2].static_fire_date_utc}</li>`
+
+			document.getElementById('lastLaunch').innerHTML = output
+		}
+		function show3(users) {
+			console.log(users[0].static_fire_date_utc)
+			let output = ''
+
+			for (let i = 1; i < 10; i++){
+				output += `<li>${users[users.length-i].static_fire_date_utc}</li>`
+			}
+			document.getElementById('nextLaunches').innerHTML = output
+		}
+		function show4(users) {
+			console.log(users[0].static_fire_date_utc)
+			let output = ''
+
+			for (let i = 1; i < 10; i++){
+				output += `<li>${users[users.length-i].static_fire_date_utc}</li>`
+			}
+			document.getElementById('lastLaunches').innerHTML = output
+		}
+
+		function show(users) {
+			let output = ''
+
+			for( let user of users ) {
+				output += `<li>${user.static_fire_date_utc}</li>`
+			}
+
+			//document.getElementById('lista').innerHTML = output
+		}
+
+	</script>
+</body>
+</html>
+```
+Perceba que a API possui muitos campos como null.
+
+
+
