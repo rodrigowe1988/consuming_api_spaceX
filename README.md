@@ -177,5 +177,5 @@ app.listen('4567')
 ```
 Ao executar o código acima (node server.js), podemos ver que na porta localhost:4567 temos nossa API rodando perfeitamente.
 
-<img src="spaceX.png">
+<img src="spacex.png">
 
