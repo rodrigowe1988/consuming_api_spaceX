@@ -107,16 +107,27 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SpaceX Launches</title>
+	<style>
+		body {
+			text-align: center;
+		}
+		ul {
+			list-style-type: none;
+		}
+	</style>
 </head>
 <body>
-	<ul id="lista"></ul>
+	<img src="SpaceX-Logo.png" alt="Logo SpaceX" width="300px">
+	<ul id="lista">
+
+	</ul>
 	<script>
 		async function getContent(){
 			try {
 				const response = await fetch('http://localhost:4567/')
 				const data = await response.json()
-				console.log()
 				show(data)
+				console.log(data.length)
 			} catch (error) {
 				console.log(error)
 			}
@@ -127,7 +138,7 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 			let output = ''
 
 			for( let user of users ) {
-				output += `<li>${user.name}</li>`
+				output += `<li>${user.static_fire_date_utc}</li>`
 			}
 
 			document.getElementById('lista').innerHTML = output
@@ -136,7 +147,8 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 	</script>
 </body>
 </html>
-```
+
+```jsx
 
 ### Backend
 Pegando a URL com os dados de lançamentos: 
@@ -164,3 +176,6 @@ app.get('/', async(req, res) => {
 app.listen('4567')
 ```
 Ao executar o código acima (node server.js), podemos ver que na porta localhost:4567 temos nossa API rodando perfeitamente.
+
+<img src="spaceX.png">
+
