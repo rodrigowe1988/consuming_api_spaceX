@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promises</title>
+</head>
+<body>
+	<ul id="users"></ul>
+	<script>
+		const ul = document.getElementById('users')
+		const url = 'https://api.spacexdata.com/v4/launches/latest'
+
+		fetch(url)
+			.then((resp) => resp.json())
+			.then(function (data){
+				console.log(data[110])
+
+				return data.map(function (launch) {
+					let li = document.createElement('li')
+					li.innerHTML = `${launch}`
+					ul.appendChild(li)
+				})
+			})
+			.catch((error) => {
+				console.log('Oops!' + error)
+			})
+	</script>
+</body>
+</html>
