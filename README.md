@@ -148,7 +148,7 @@ Voltando ao arquivo html, vamos utilizar a resposta da nossa **API** e trabalhar
 </body>
 </html>
 
-```jsx
+```
 
 ### Backend
 Pegando a URL com os dados de lançamentos: 
@@ -157,7 +157,7 @@ Pegando a URL com os dados de lançamentos:
 AXIOS
 Muito parecido com a ideia do fetch, utilizaremos o axios para receber o json da API de lançamentos.
 
-```
+```jsx
 const cors = require('cors')
 const express = require('express')
 const app = express()
