@@ -176,7 +176,7 @@ Ao executar o código acima (node server.js), podemos ver que na porta localhost
 
 <img src="spacex.png">
 
-Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa para a nossa aplicação.
+Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa para a nossa aplicação. Com o código abaixo com o HTML, CSS e o JS.
 
 ```jsx
 <!DOCTYPE html>
@@ -190,11 +190,14 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 		body {
 			text-align: center;
 			background-color: #efefef;
-			align-items: center;
 		}
 		.datas {
+			margin: 0 auto;
+			width: 300px;
 			text-align: left;
-			padding-left: 50px;
+			padding-left: 20px;
+			border: 1px solid black;
+
 		}
 		ul {
 			list-style-type: none;
@@ -203,7 +206,6 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 </head>
 <body>
 	<img src="SpaceX-Logo.png" alt="Logo SpaceX" width="300px">
-
 	<div class="datas">
 	<h3>Próximo Lançamento: </h3>
 	<ul id="nextLaunch"></ul>
@@ -237,7 +239,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 
 
 		function show1(users) {
-			console.log(users[0].date_utc)
+
 			let output = ''
 
 			output += `<li>${users[users.length-1].date_utc}</li>`
@@ -245,7 +247,6 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 			document.getElementById('nextLaunch').innerHTML = output
 		}
 		function show2(users) {
-			console.log(users[0].date_utc)
 			let output = ''
 
 			output += `<li>${users[users.length-2].date_utc}</li>`
@@ -253,7 +254,6 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 			document.getElementById('lastLaunch').innerHTML = output
 		}
 		function show3(users) {
-			console.log(users[0].date_utc)
 			let output = ''
 
 			for (let i = 1; i < 10; i++){
@@ -275,7 +275,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 			let output = ''
 
 			for( let user of users ) {
-				output += `<li>${user.date_utc}</li>`
+				output += `<li>${user.static_fire_date_utc}</li>`
 			}
 
 			//document.getElementById('lista').innerHTML = output
@@ -284,7 +284,9 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 	</script>
 </body>
 </html>
+
 ```
+E abaixo a imagem da nossa aplicação rodando.
 <img src="spacex_final.png">
 
 
