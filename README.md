@@ -286,7 +286,7 @@ Agora podemos utilizar os dados e filtrar aquelas datas que realmente importa pa
 </html>
 
 ```
-E abaixo a imagem da nossa aplicação rodando.
+E abaixo a imagem da nossa aplicação rodando.<br>
 <img src="spacex_final.png">
 
 
